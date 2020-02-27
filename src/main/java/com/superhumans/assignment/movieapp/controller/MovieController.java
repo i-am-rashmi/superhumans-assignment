@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@CrossOrigin(origins = "*")
 public class MovieController {
     @Autowired
     private MovieServiceImpl mongoService;

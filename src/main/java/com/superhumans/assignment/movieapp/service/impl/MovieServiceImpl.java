@@ -38,8 +38,7 @@ public class MovieServiceImpl implements MovieService {
 
         Set<Movie> movieList = movieRepository.findByNameStartingWithIgnoreCase(prefix,PageRequest.of(0,limit,Sort.by(Sort.Direction.ASC,"name"))).toSet();
         Set<MovieDto> movieDtoSet = new HashSet<>();
-        if(movieList.size()>0) {
-
+        if(!movieList.isEmpty()) {
             for (Movie m : movieList) {
                 MovieDto movieDto = new MovieDto();
                 movieDto.setName(m.getName());
